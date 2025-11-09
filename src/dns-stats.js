@@ -39,11 +39,11 @@ function getDNSStats(domains) {
   return dnsStats;
 }
 
-console.log(getDNSStats([
-  'code.yandex.ru',
-  'music.yandex.ru',
-  'yandex.ru'
-]));
+// console.log(getDNSStats([
+//   'code.yandex.ru',
+//   'music.yandex.ru',
+//   'yandex.ru'
+// ]));
 
 module.exports = {
   getDNSStats
