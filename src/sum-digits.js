@@ -12,10 +12,20 @@ const { NotImplementedError } = require('../lib');
  * For 91, the result should be 1 (9 + 1 = 10, 1 + 0 = 1)
  *
  */
-function getSumOfDigits(/* n */) {
-  // Remove line below and write your code here
-  throw new NotImplementedError('Not implemented');
+function getSumOfDigits(n) {
+  if (typeof n !== 'number' || n < 0) {
+    throw new NotImplementedError('Input must be a non-negative number');
+  }
+
+  while (n >= 10) {
+    n = n.toString().split('').reduce((sum, digit) => sum + Number(digit), 0);
+  }
+  return n;
 }
+
+// console.log(getSumOfDigits(100)); // 1
+// console.log(getSumOfDigits(91));  // 1
+// console.log(getSumOfDigits(12345)); // 6
 
 module.exports = {
   getSumOfDigits
